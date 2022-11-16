@@ -1,5 +1,9 @@
 import React, { Fragment, useEffect, useState } from "react";
 
+// j'importe editTodo dont je vais avoir besoin pour mon bouton edit
+// on l'insert dans notre boutton, plus bas
+import EditTodo from "./EditTodo";
+
 
 const ListTodos = () => {
 
@@ -9,7 +13,7 @@ const ListTodos = () => {
 
     const deleteTodo = async id => {
         try {
-            // 2 params : spécifique et la méthode
+            // 2 params : spécifique et la méthode, pas besoin d'etre plus spécifique dans la méthode car POST
             const deleteTodo = await fetch(`http://localhost:5000/todos/${id}`, {
             method: "DELETE"
         })
@@ -44,6 +48,7 @@ const ListTodos = () => {
 
     return (
         <Fragment>
+            {/* la ligne qui suit sert à mettre une ligne vide, en guise d'espacement */}
             {" "}
             <table class="table mt-5 text-center">
                 <thead>
@@ -58,7 +63,7 @@ const ListTodos = () => {
                      {todos.map(todo => (
                      <tr key={todo.todo_id}>
                          <td>{todo.description}</td>
-                         <td>Edit</td>
+                         <td><EditTodo todo={todo} /></td>
                          <td><button className="btn btn-danger" onClick={() => deleteTodo(todo.todo_id)}>Delete</button></td>
                      </tr>
                      ))}
