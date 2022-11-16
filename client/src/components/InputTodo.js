@@ -21,6 +21,8 @@ const InputTodo = () => {
             })
 
             console.log(response);
+            // Une fois que la réponse a été envoyé, ca rafraichi et montre les modif
+            window.location = "/";
             
         } catch (err) {
             console.error(err.message);
@@ -34,7 +36,8 @@ const InputTodo = () => {
             <input type="text" className="form-control" value={description} onChange= {e => setDescription(e.target.value)} />
             <button className="btn btn-success">Add</button>
         </form>
-    </Fragment>)
+    </Fragment>
+    )
 };
 
 export default InputTodo;
