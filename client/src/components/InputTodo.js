@@ -6,14 +6,12 @@ const InputTodo = () => {
     // Dans les guillemets, on peut mettre une valeur par défaut
     const [description, setDescription] = useState("")
 
-    // on crée un fonction pour le add
+    // on crée un fonction pour ajouter une tache POST
     const onSubmitForm = async e => {
         e.preventDefault();
         try {
             const body = { description };
             // 2 params : le lien et le type
-            // problème avec le port du localhost..ca ne s'encre pas dans la BDD
-            // ERR_CONNECTION_REFUSED
             const response = await fetch("http://localhost:5000/todos", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
@@ -33,7 +31,7 @@ const InputTodo = () => {
     <Fragment>
         <h1 className="text-center mt-5">Pern Todo List</h1>
         <form className="d-flex mt-5" onSubmit={onSubmitForm}>
-            <input type="text" className="form-control" value={description} onChange= {e => setDescription(e.target.value)} />
+            <input type="text" className="form-control" value={description} onChange={e => setDescription(e.target.value)} />
             <button className="btn btn-success">Add</button>
         </form>
     </Fragment>

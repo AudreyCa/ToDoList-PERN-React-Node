@@ -9,8 +9,7 @@ const ListTodos = () => {
 
     const [todos, setTodos] = useState([])
 
-    //delete todo function
-
+    //la méthode pour supprimer une todo DELETE
     const deleteTodo = async id => {
         try {
             // 2 params : spécifique et la méthode, pas besoin d'etre plus spécifique dans la méthode car POST
@@ -27,6 +26,7 @@ const ListTodos = () => {
         }
     }
 
+    //la méthode pour afficher toute la liste des todos GET (all)
     const getTodos = async () => {
             try {
     

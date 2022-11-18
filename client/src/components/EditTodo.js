@@ -4,8 +4,7 @@ const EditTodo = ({ todo }) => {
 
     const [description, setDescription] = useState(todo.description)
 
-    // fonction description
-
+    // la méthode pour modifier UPDATE la tache
     const updateDescription = async (e) => {
         e.preventDefault();
 
@@ -63,5 +62,3 @@ const EditTodo = ({ todo }) => {
 }
 
 export default EditTodo;
-
-// onClick={() => deleteTodo(todo.todo_id)}
