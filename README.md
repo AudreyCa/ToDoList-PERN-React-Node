@@ -4,7 +4,7 @@ This project was carried out during the training of Application Designer Develop
 
 ## Technologies used
 
-Language : PostgreSQL, Express.js, React, Node.js
+Language : PostgreSQL, Express.js, React.js, Node.js
 
 IDE : Visual Studio Code
 
